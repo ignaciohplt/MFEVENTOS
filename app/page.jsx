@@ -120,6 +120,13 @@ export default function HomePage() {
 
             <button className="send" disabled={status === 'loading'}>{status === 'loading' ? 'ENVIANDO...' : 'ENVIAR RESERVA'}</button>
             <div className="safe">🔒 Tus datos están seguros y solo se usarán para tu reserva.</div>
+            <button
+              type="button"
+              className="printButton"
+              onClick={() => window.print()}
+            >
+              🖨️ IMPRIMIR FICHA
+            </button>
           </form>
 
           <div>
@@ -165,6 +172,47 @@ export default function HomePage() {
               <div className="hour">17:00</div><div></div>
               <div className="hour">18:00</div><div></div>
             </div>
+          </div>
+        </section>
+
+        <section className="printFicha">
+          <div className="printTopDecor">
+            <span></span><span></span><span></span>
+          </div>
+
+          <div className="printHeader">
+            <div className="printLogo"><span>M.F</span> EVENTOS</div>
+            <p>Mobiliario, inflables infantiles y decoraciones</p>
+          </div>
+
+          <h2>FICHA DE RESERVA</h2>
+
+          <table className="printTable">
+            <tbody>
+              <tr><td>Nombre y Apellido</td><td>{form.nombre || '........................................'}</td></tr>
+              <tr><td>Fecha del Evento</td><td>{form.fecha || '........................................'}</td></tr>
+              <tr><td>Dirección</td><td>{form.direccion || '........................................'}</td></tr>
+              <tr><td>Horario</td><td>{form.hora || '..........'} {eventEnd && `- ${eventEnd}`}</td></tr>
+              <tr><td>Detalle del Pedido</td><td>{form.detalle || '........................................'}</td></tr>
+              <tr><td>Total del Pedido</td><td>{money(form.total)}</td></tr>
+              <tr><td>Envío</td><td>{money(form.envio)}</td></tr>
+              <tr><td>Seña</td><td>{money(form.sena)}</td></tr>
+              <tr><td>Saldo Restante</td><td>{money(saldo)}</td></tr>
+            </tbody>
+          </table>
+
+          <div className="condiciones">
+            <h3>Condiciones</h3>
+            <ul>
+              <li>La reserva queda confirmada una vez abonada la seña.</li>
+              <li>El saldo deberá abonarse antes o el día del evento.</li>
+              <li>La seña no es reembolsable.</li>
+              <li>Los datos cargados en esta ficha corresponden a la reserva solicitada.</li>
+            </ul>
+          </div>
+
+          <div className="printFooter">
+            <b>M.F EVENTOS</b> · Gracias por confiar en nosotros
           </div>
         </section>
       </main>
