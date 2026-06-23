@@ -175,21 +175,49 @@ export default function HomePage() {
           </div>
         </section>
 
+        <section className="printFicha">
+          <div className="printTopDecor">
+            <span></span><span></span><span></span>
+          </div>
 
-        <section className="printFicha" aria-label="Ficha de reserva para imprimir">
-          <div className="pfValue pfNombre">{form.nombre}</div>
-          <div className="pfValue pfFecha">{form.fecha}</div>
-          <div className="pfValue pfDireccion">{form.direccion}</div>
-          <div className="pfValue pfHora">{form.hora} {eventEnd && `a ${eventEnd}`}</div>
-          <div className="pfValue pfDetalle">{form.detalle}</div>
-          <div className="pfValue pfTotal">{money(form.total)}</div>
-          <div className="pfValue pfEnvio">{money(form.envio)}</div>
-          <div className="pfValue pfSena">{money(form.sena)}</div>
-          <div className="pfValue pfSaldo">{money(saldo)}</div>
+          <div className="printHeader">
+            <div className="printLogo"><span>M.F</span> EVENTOS</div>
+            <p>Mobiliario, inflables infantiles y decoraciones</p>
+          </div>
+
+          <h2>FICHA DE RESERVA</h2>
+
+          <table className="printTable">
+            <tbody>
+              <tr><td>Nombre y Apellido</td><td>{form.nombre || '........................................'}</td></tr>
+              <tr><td>Fecha del Evento</td><td>{form.fecha || '........................................'}</td></tr>
+              <tr><td>Dirección</td><td>{form.direccion || '........................................'}</td></tr>
+              <tr><td>Horario</td><td>{form.hora || '..........'} {eventEnd && `- ${eventEnd}`}</td></tr>
+              <tr><td>Detalle del Pedido</td><td>{form.detalle || '........................................'}</td></tr>
+              <tr><td>Total del Pedido</td><td>{money(form.total)}</td></tr>
+              <tr><td>Envío</td><td>{money(form.envio)}</td></tr>
+              <tr><td>Seña</td><td>{money(form.sena)}</td></tr>
+              <tr><td>Saldo Restante</td><td>{money(saldo)}</td></tr>
+            </tbody>
+          </table>
+
+          <div className="condiciones">
+            <h3>Condiciones</h3>
+            <ul>
+              <li>La reserva queda confirmada una vez abonada la seña.</li>
+              <li>El saldo deberá abonarse antes o el día del evento.</li>
+              <li>La seña no es reembolsable.</li>
+              <li>Los datos cargados en esta ficha corresponden a la reserva solicitada.</li>
+            </ul>
+          </div>
+
+          <div className="printFooter">
+            <b>M.F EVENTOS</b> · Gracias por confiar en nosotros
+          </div>
         </section>
       </main>
 
-      <footer><b>© 2026 M.F EVENTOS</b><span>Instagram · Facebook</span><span>WhatsApp</span></footer>
+      <footer><b>© 2025 M.F EVENTOS</b><span>Instagram · Facebook</span><span>WhatsApp</span></footer>
     </>
   );
 }
