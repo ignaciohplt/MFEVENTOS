@@ -189,7 +189,7 @@ export default function HomePage() {
         </section>
       </main>
 
-      <footer><b>© 2025 M.F EVENTOS</b><span>Instagram · Facebook</span><span>WhatsApp</span></footer>
+      <footer><b>© 2026 M.F EVENTOS</b><span>Instagram · Facebook</span><span>WhatsApp</span></footer>
     </>
   );
 }
