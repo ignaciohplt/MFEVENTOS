@@ -176,6 +176,7 @@ export default function HomePage() {
         </section>
 
         <section className="printFicha">
+          <img className="printBg" src="/fondo-mf-eventos.jpg" alt="" />
           <div className="printTopDecor">
             <span></span><span></span><span></span>
           </div>
